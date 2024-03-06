@@ -1,10 +1,12 @@
-const userSchema = new mongoose.Schema({
+const mongoose = require('mongoose');
+
+const reservationSchema = new mongoose.Schema({
     IDreserva: {
         type: String,
         required: true
     },
     tiempoReserva: {
-        type: Date, // Tipo de dato para almacenar la fecha y hora
+        type: Date,
         required: true
     },
     placa: {
@@ -17,3 +19,7 @@ const userSchema = new mongoose.Schema({
         required: true
     }
 });
+
+const Reservation = mongoose.model('Reservation', reservationSchema);
+
+module.exports = Reservation;
